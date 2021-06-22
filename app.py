@@ -11,20 +11,20 @@ import csv, re, operator
 app = Flask(__name__)
 
 person = {
-    'first_name': 'Nohossat',
-    'last_name' : 'TRAORE',
-    'address' : '9 rue Léon Giraud · PARIS · FRANCE',
+    'first_name': 'yuanxiao',
+    'last_name' : 'xu',
+    'address' : 'Hubei Normal University',
     'job': 'Web developer',
-    'tel': '0678282923',
-    'email': 'nohossat.tra@yahoo.com',
-    'description' : 'Suite à une expérience internationale en développement web et dans le domaine des arts, l’impact de l’intelligence artificielle dans nos vies me surprend de jour en jour. \n Aujourd’hui, je souhaite changer de cap et comprendre les secrets que recèlent nos données. J’aimerais mettre à profit ces découvertes au service des entreprises/associations à dimension sociale.',
+    'tel': '156****0734',
+    'email': 'xyx15629760734@outlook.com',
+    'description' : '大数据是这个高科技时代的产物，研究大数据，最重要的意义是预测探究。因为数据从根本上讲，是对过去和现在的归纳和总结，其本身不具备趋势和方向性的特征，但是我们可以应用大数据去了解事物发展的客观规律、了解人类行为，并且能够帮助我们改变过去的思维方式，建立新的数据思维模型，从而对未来进行预测和推测',
     'social_media' : [
         {
             'link': 'https://www.facebook.com/nono',
             'icon' : 'fa-facebook-f'
         },
         {
-            'link': 'https://github.com/nono',
+            'link': 'https://github.com/yuanxiao9',
             'icon' : 'fa-github'
         },
         {
@@ -36,7 +36,7 @@ person = {
             'icon' : 'fa-twitter'
         }
     ],
-    'img': 'img/img_nono.jpg',
+    'img': 'img/b.jpg',
     'experiences' : [
         {
             'title' : 'Web Developer',
@@ -59,11 +59,11 @@ person = {
     ],
     'education' : [
         {
-            'university': 'Paris Diderot',
-            'degree': 'Projets informatiques et Startégies d\'entreprise (PISE)',
-            'description' : 'Gestion de projets IT, Audit, Programmation',
+            'university': '湖北师范大学',
+            'degree': '计算机与信息工程学院',
+            'description' : '软件工程',
             'mention' : 'Bien',
-            'timeframe' : '2015 - 2016'
+            'timeframe' : '2018 - 2022'
         },
         {
             'university': 'Paris Dauphine',
@@ -97,7 +97,7 @@ person = {
 
 @app.route('/')
 def cv(person=person):
-    return render_template('index.html', person=person)
+    return render_template('resume.html', person=person)
 
 
 
