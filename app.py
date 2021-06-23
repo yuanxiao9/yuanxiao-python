@@ -11,13 +11,14 @@ import csv, re, operator
 app = Flask(__name__)
 
 person = {
-    'first_name': 'yuanxiao',
-    'last_name' : 'xu',
-    'address' : 'Hubei Normal University',
-    'job': 'Web developer',
+    'first_name': '元宵',
+    'last_name' : '许',
+    'address' : '湖北省',
+    'job': 'Web开发',
     'tel': '156****0734',
     'email': 'xyx15629760734@outlook.com',
-    'description' : '大数据是这个高科技时代的产物，研究大数据，最重要的意义是预测探究。因为数据从根本上讲，是对过去和现在的归纳和总结，其本身不具备趋势和方向性的特征，但是我们可以应用大数据去了解事物发展的客观规律、了解人类行为，并且能够帮助我们改变过去的思维方式，建立新的数据思维模型，从而对未来进行预测和推测',
+    'description' : '认为大数据是这个高科技时代的产物，研究大数据，最重要的意义是预测探究。因为数据从根本上讲，是对过去和现在的归纳和总结，其本身不具备趋势和方向性的特征，但是我们可以应用大数据去了解事物发展的客观规律、了解人类行为，并且能够帮助我们改变过去的思维方式，建立新的数据思维模型，从而对未来进行预测和推测',
+    'hobbies':'爱好编程，喜欢新鲜食物，勤于动手',
     'social_media' : [
         {
             'link': 'https://www.facebook.com/nono',
@@ -40,21 +41,21 @@ person = {
     'experiences' : [
         {
             'title' : 'Web Developer',
-            'company': 'AZULIK',
-            'description' : 'Project manager and lead developer for several AZULIK websites.',
+            'company': '飞机购票系统',
+            'description' : '查询航班时间出发点等及信息供用户选择购票',
             'timeframe' : 'July 2018 - November 2019'
         },
         {
             'title' : 'Freelance Web Developer',
-            'company': 'Independant',
-            'description' : 'Create Wordpress websites for small and medium companies. ',
-            'timeframe' : 'February 2017 - Present'
+            'company': '购物商城',
+            'description' : '用户登录注册购物商城，添加商品到购物车进行支付 ',
+            'timeframe' : 'February 2019 - Present'
         },
         {
-            'title' : 'Sharepoint Intern',
-            'company': 'ALTEN',
-            'description' : 'Help to manage a 600 Sharepoint sites platform (audit, migration to Sharepoint newer versions)',
-            'timeframe' : 'October 2015 - October 2016'
+            'title' : 'Android Studio',
+            'company': '音乐APP',
+            'description' : '实现一个在线搜索并可以下载音乐的播放器',
+            'timeframe' : 'October 2021 - October 2021'
         }
     ],
     'education' : [
@@ -64,21 +65,21 @@ person = {
             'description' : '软件工程',
             'mention' : 'Bien',
             'timeframe' : '2018 - 2022'
-        },
-        {
-            'university': 'Paris Dauphine',
-            'degree': 'Master en Management global',
-            'description' : 'Fonctions supports (Marketing, Finance, Ressources Humaines, Comptabilité)',
-            'mention' : 'Bien',
-            'timeframe' : '2015'
-        },
-        {
-            'university': 'Lycée Turgot - Paris Sorbonne',
-            'degree': 'CPGE Economie & Gestion',
-            'description' : 'Préparation au concours de l\'ENS Cachan, section Economie',
-            'mention' : 'N/A',
-            'timeframe' : '2010 - 2012'
         }
+        # {
+        #     'university': 'Paris Dauphine',
+        #     'degree': 'Master en Management global',
+        #     'description' : 'Fonctions supports (Marketing, Finance, Ressources Humaines, Comptabilité)',
+        #     'mention' : 'Bien',
+        #     'timeframe' : '2015'
+        # },
+        # {
+        #     'university': 'Lycée Turgot - Paris Sorbonne',
+        #     'degree': 'CPGE Economie & Gestion',
+        #     'description' : 'Préparation au concours de l\'ENS Cachan, section Economie',
+        #     'mention' : 'N/A',
+        #     'timeframe' : '2010 - 2012'
+        # }
     ],
     'programming_languages' : {
         'HMTL' : ['fa-html5', '100'], 
