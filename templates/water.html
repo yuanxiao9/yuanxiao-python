@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        function cb(selection) {
+            $.getJSON({
+                url: "/callback", data: { 'data': selection }, success: function (result) {
+                    Plotly.newPlot('chart', result, {});;
+                }
+            });
+        }
+    </script>
+
+
+
+</head>
+
+<body>
+<h1>水质,饮用水可饮用性分析</h1>
+    <div class="d">
+        <p>2.1可饮用性和不可饮性样本数量对比图</p>
+        <img class="profile" src="{{ url_for('static', filename='img/可饮用性和不可饮性样本数量对比.png') }}" width="1200" height="600" alt="" />
+        <p>0表示不可饮用数量1200，1表示可饮用数量800多一点。</p>
+    </div>
+    <p></p>
+
+    <div class="d">
+        <p>2.2可饮用性和不可饮性样本比例图</p>
+        <img class="profile" src="{{ url_for('static', filename='img/可饮用性和不可饮性占比.png') }}" width="1200" height="600" alt="" />
+        <p>不可饮用性和可饮用性饼图占比分别为59.67%、40.33%，说明水质污染还挺严重的。</p>
+    </div>
+    <p></p>
+    <div class="d">
+        <p>2.3水中物质影响可饮用性图</p>
+        <img class="profile" src="{{ url_for('static', filename='img/水中物质影响可饮用性.png') }}" width="1200" height="600" alt="" />
+        <p>水中各物质所对应含量或属性时的可饮用性。其中，可饮用性高的水的“ph”、“硬度”、“固体”、“氯胺”、“硫酸盐”、“电导率”、“有机碳”、“三卤甲烷”、“浊度”大概分别为7,200mg/L,18000ppm,7.5ppm,320mg/L,410uS/cm,14ppm,65ug/L,3.8</p>
+    </div>
+    <p></p>
+    <div class="d">
+        <p>2.4水中物质相关性图</p>
+        <img class="profile" src="{{ url_for('static', filename='img/水中物质相关性.png') }}" width="1200" height="600" alt="" />
+        <p>从下面的图表我们可以知道，所有特征之间的相关性似乎非常小；“硬度”、“固体”、“氯胺”、“硫酸盐”、“电导率”、“有机碳”、“三卤甲烷”、“浊度”列倾斜。所以，我们可以使用luciferml纠正它。</p>
+    </div>
+    <p></p>
+
+</body>
+<script>
+    d = {{ graphJSON | safe }};
+    Plotly.newPlot('chart', d, {});
+</script>
+
+</html>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        function cb(selection) {
+            $.getJSON({
+                url: "/callback", data: { 'data': selection }, success: function (result) {
+                    Plotly.newPlot('chart', result, {});;
+                }
+            });
+        }
+    </script>
+
+
+
+</head>
+
+<body style="font-family:arial, sans-serif">
+
+<h1>学生分数成绩分析</h1>
+    <div class="a">
+        <p>1.1前后测试分数比较图</p>
+        <img class="profile" src="{{ url_for('static', filename='img/前后测试分数比较.png') }}" width="800" height="600" alt="" />
+        <p>前测和后测的分数分布看起来很相似，但有一定的偏差。因此，大多数情况下，学生在进行后测时会提高他们的前测分数。</p>
+    </div>
+    <p></p>
+    <div class="b">
+        <p>1.2每个教室的分数分布图</p>
+        <img class="profile" src="{{ url_for('static', filename='img/每个教室的分数分布.png') }}" width="1500" height="600" alt="" />
+        <p>显示了每个教室的分数分布。它表明，在每个班级中，几乎没有“优秀”的分数，这意味着学生的表现都相似。所以应该进一步研究课堂的特征，因为它可能会影响学生的分数。让我们先通过可视化检查学生特征，然后再看课堂特征。</p>
+    </div>
+    <p></p>
+    <div class="c">
+        <p>1.3学生特征图</p>
+        <img class="profile" src="{{ url_for('static', filename='img/学生特征.png') }}" width="1000" height="500" alt="" />
+        <p>显示了学生特征（午餐和性别）如何影响测试后的分数。总体趋势是，没有获得午餐补贴的学生比有资格获得午餐补贴的学生得分更高。这可能显示出由于社会经济地位/位置而导致的教育质量差异。然而，性别和测试后分数之间似乎没有相关性。</p>
+    </div>
+    <p></p>
+    <div class="d">
+        <p>1.4后测分数与人数关系图</p>
+        <img class="profile" src="{{ url_for('static', filename='img/后测分数与人数关系.png') }}" width="1200" height="600" alt="" />
+        <p>后测分数与课堂学生人数之间存在负线性关系，人数越多，后测分数越低。</p>
+    </div>
+    <p></p>
+    <div class="e">
+        <p>1.5影响后测分数因素图</p>
+        <img class="profile" src="{{ url_for('static', filename='img/影响后测分数因素.png') }}" width="1200" height="600" alt="" />
+        <p>我们可以看到，教学方式、学校类型、教学设施都会影响学生的测试后分数。</p>
+    </div>
+
+
+</body>
+
+<script>
+    d = {{ graphJSON | safe }};
+    Plotly.newPlot('chart', d, {});
+</script>
+
+
+</html>

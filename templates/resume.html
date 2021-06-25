@@ -67,6 +67,8 @@
       </div>
       <div class="contact-presentation"> <!-- YOUR PRESENTATION RESUME  -->
       	<p><span class="bold">{{ person.last_name }}{{ person.first_name }}</span>  {{ person.description }} </p>
+          <p><a href="{{url_for('index')}}" target="_blank">近期作品</a></p>
+
       </div>
       <div class="contact-social clearfix">
       	<ul class="list-titles">
@@ -103,12 +105,12 @@
         {% for diploma in person.education %}
       <div class="experience-wrapper">
       	<div class="company-wrapper clearfix">
-      		<div class="experience-title">{{ diploma.degree }}</div> <!-- NAME OF THE COMPANY YOUWORK WITH  -->
+      		<div class="experience-title">{{ diploma.university }}</div> <!-- NAME OF THE COMPANY YOUWORK WITH  -->
           <div class="time">{{ diploma.timeframe }}</div> <!-- THE TIME YOU WORK WITH THE COMPANY  -->
       	</div>
 
         <div class="job-wrapper clearfix">
-        	<div class="experience-title">{{ diploma.university }} </div> <!-- JOB TITLE  -->
+        	<div class="experience-title">{{ diploma.degree }} </div> <!-- JOB TITLE  -->
           <div class="company-description">
           	<p>{{ diploma.description }}</p>  <!-- JOB DESCRIPTION  -->
           </div>
@@ -144,7 +146,8 @@
   <div class="clearfix"></div>
 </div>
 <!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js'></script><script  src="../static/script.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js'></script>
+  <script  src="../static/script.js"></script>
 
 </body>
 </html>
